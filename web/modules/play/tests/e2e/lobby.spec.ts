@@ -204,7 +204,7 @@ test.describe("Game Lobby", () => {
         "clipboard-read",
         "clipboard-write",
       ]);
-      await joinLobby(page, "Mark");
+      await joinLobby(page, "Marko");
       await page.getByRole("button", { name: "Copy Link" }).click();
       const inviteUrl = await page.evaluate(() =>
         navigator.clipboard.readText(),
@@ -216,14 +216,14 @@ test.describe("Game Lobby", () => {
       await submitName(guestPage, "Steve");
 
       // The host badge is an icon, not text (see .gamelobby-player-crown
-      // in GameLobby.vue) -- Mark's own name is shown in green instead
+      // in GameLobby.vue) -- Marko's own name is shown in green instead
       // of a separate "you" label.
       await expect(
         page.locator(".gamelobby-player-crown"),
       ).toBeVisible();
       await expect(
         page.locator(".gamelobby-player-name.highlight"),
-      ).toHaveText("Mark");
+      ).toHaveText("Marko");
       await expect(page.getByText("Steve")).toBeVisible();
 
       // Host sees editable controls...
@@ -281,7 +281,7 @@ test.describe("Game Lobby", () => {
         "clipboard-read",
         "clipboard-write",
       ]);
-      await joinLobby(page, "Mark");
+      await joinLobby(page, "Marko");
       await page.getByRole("button", { name: "Copy Link" }).click();
       const inviteUrl = await page.evaluate(() =>
         navigator.clipboard.readText(),

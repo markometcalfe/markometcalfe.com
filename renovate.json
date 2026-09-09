@@ -7,7 +7,7 @@
   "packageRules": [
     {
       "matchFileNames": ["web/**"],
-      "matchPackageNames": ["@markmetcalfe/*"],
+      "matchPackageNames": ["@markometcalfe/*"],
       "rangeStrategy": "bump",
       "minimumReleaseAge": null,
       "schedule": ["* * * * *"]
@@ -73,7 +73,7 @@
       "token": "{{ secrets.NPM_TOKEN }}"
     }
   ],
-  "npmrc": "@markmetcalfe:registry=https://npm.pkg.github.com/",
+  "npmrc": "@markometcalfe:registry=https://npm.pkg.github.com/",
   "lockFileMaintenance": {
     "enabled": true
   },

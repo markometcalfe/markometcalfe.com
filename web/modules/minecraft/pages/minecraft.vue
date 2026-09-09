@@ -1,13 +1,13 @@
 <template>
   <div class="page-wrapper">
     <iframe
-      src="https://plex.markmetcalfe.com/minecraft/dynmap"
+      src="https://plex.markometcalfe.com/minecraft/dynmap"
       title="Map of the Minecraft Server"
       class="mapframe"
     />
     <div class="banner-overlay">
       <span class="light">Server IP: </span
-      ><span class="highlight">minecraft.markmetcalfe.com</span>
+      ><span class="highlight">minecraft.markometcalfe.com</span>
     </div>
   </div>
 </template>

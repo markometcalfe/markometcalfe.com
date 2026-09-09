@@ -21,7 +21,9 @@ test.describe("TermsOfServicePage", () => {
 
     await Promise.all([page.waitForURL("/"), link.click()]);
 
-    await expect(page.locator("body")).toContainText("Mark Metcalfe");
+    await expect(page.locator("body")).toContainText(
+      "Marko Metcalfe",
+    );
   });
 
   test("contact link has correct email", async ({ page }) => {
@@ -30,7 +32,7 @@ test.describe("TermsOfServicePage", () => {
     );
     await expect(link).toHaveAttribute(
       "href",
-      "mailto:mark@markmetcalfe.com",
+      "mailto:marko@markometcalfe.com",
     );
   });
 });

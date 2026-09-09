@@ -1,6 +1,6 @@
 const isPlaywrightTest = process.env.IS_PLAYWRIGHT === "1";
 const isApiLocal = process.env.API_LOCAL === "1";
-const siteDomain = "markmetcalfe.com";
+const siteDomain = "markometcalfe.com";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Mark Metcalfe",
+      title: "Marko Metcalfe",
       htmlAttrs: {
         lang: "en",
       },
@@ -40,8 +40,8 @@ export default defineNuxtConfig({
     },
   },
   appConfig: {
-    siteDomain: "markmetcalfe.com",
-    mailtoLink: "mailto:mark@markmetcalfe.com",
+    siteDomain: "markometcalfe.com",
+    mailtoLink: "mailto:marko@markometcalfe.com",
   },
   compatibilityDate: "2025-05-28",
   icon: {

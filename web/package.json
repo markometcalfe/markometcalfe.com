@@ -1,5 +1,5 @@
 {
-  "name": "markmetcalfe.com-web",
+  "name": "markometcalfe.com-web",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,7 +13,7 @@
     "lint:fix": "oxlint . --fix && oxfmt ."
   },
   "dependencies": {
-    "@markmetcalfe/resume": "^1.0.2",
+    "@markometcalfe/resume": "^1.0.3",
     "@nuxt/fonts": "0.14.0",
     "@nuxt/icon": "2.5.0",
     "@nuxt/image": "2.1.0",

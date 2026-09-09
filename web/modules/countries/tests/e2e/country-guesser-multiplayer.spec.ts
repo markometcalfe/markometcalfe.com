@@ -16,9 +16,9 @@ test.beforeEach(async ({ context }, testInfo) => {
   await isolateRoomPerFile(context, testInfo, "multiplayer");
 });
 
-// Both tests below join a "Mark" + "Steve" pair into this file's shared
+// Both tests below join a "Marko" + "Steve" pair into this file's shared
 // room (see isolateRoomPerFile) -- serialised so they can't both be
-// mid-join at once, which otherwise races two concurrent "Mark"s into
+// mid-join at once, which otherwise races two concurrent "Marko"s into
 // the same room.
 test.describe("Country Guesser Multiplayer", () => {
   test.describe.configure({ mode: "serial" });
@@ -40,7 +40,7 @@ test.describe("Country Guesser Multiplayer", () => {
         "clipboard-read",
         "clipboard-write",
       ]);
-      await joinLobby(page, "Mark");
+      await joinLobby(page, "Marko");
       await page.getByRole("button", { name: "Copy Link" }).click();
       await expect(
         page.getByRole("button", { name: "Copied!" }),
@@ -51,7 +51,7 @@ test.describe("Country Guesser Multiplayer", () => {
 
       // Navigates straight to the invite URL and only fills in the name --
       // NOT joinLobby(), which starts by navigating to /countries and would
-      // create (and land the guest in) a brand new room instead of Mark's.
+      // create (and land the guest in) a brand new room instead of Marko's.
       const guestContext = await browser.newContext();
       const guestPage = await guestContext.newPage();
       await guestPage.goto(inviteUrl);
@@ -64,7 +64,7 @@ test.describe("Country Guesser Multiplayer", () => {
       ).toBeVisible();
       await expect(
         page.locator(".gamelobby-player-name.highlight"),
-      ).toHaveText("Mark");
+      ).toHaveText("Marko");
       await expect(page.getByText("Steve")).toBeVisible();
       await expect(
         page.getByRole("slider", { name: "Game length (min)" }),
@@ -113,7 +113,7 @@ test.describe("Country Guesser Multiplayer", () => {
       await expect(hostGuessInput).toBeVisible();
       await expect(guestGuessInput).toBeVisible();
       await expect(page.locator(".scorebar-players")).toContainText(
-        "Mark",
+        "Marko",
       );
       await expect(page.locator(".scorebar-players")).toContainText(
         "Steve",
@@ -163,10 +163,10 @@ test.describe("Country Guesser Multiplayer", () => {
       await expect(hostGuessInput).toBeVisible();
       await expect(guestGuessInput).toBeVisible();
 
-      // Mark's score is now final -- he only skips from here on.
+      // Marko's score is now final -- he only skips from here on.
       const markPoints = Number(
         await page
-          .locator(".scorebar-player", { hasText: "Mark" })
+          .locator(".scorebar-player", { hasText: "Marko" })
           .locator(".scorebar-player-score")
           .innerText(),
       );
@@ -199,10 +199,10 @@ test.describe("Country Guesser Multiplayer", () => {
       await clickRobustly(guestSkipButton);
       await expect(
         guestPage.locator(".guesspanel-waiting-text"),
-      ).toHaveText("Skipped. Waiting for Mark…");
+      ).toHaveText("Skipped. Waiting for Marko…");
       await clickRobustly(hostSkipButton);
 
-      // Steve: 2 correct, 1 skip -- the higher score, so the winner. Mark:
+      // Steve: 2 correct, 1 skip -- the higher score, so the winner. Marko:
       // 1 correct, 2 skips. The rest of the round plays out untouched
       // until the (accelerated, ~15s) clock ends it.
       const gameOverHeading = page.getByRole("heading", {
@@ -225,7 +225,7 @@ test.describe("Country Guesser Multiplayer", () => {
       await expect(
         scores.nth(0).locator(".gameoverscreen-score-pts"),
       ).toHaveText(String(stevePoints));
-      await expect(scores.nth(1)).toContainText("Mark");
+      await expect(scores.nth(1)).toContainText("Marko");
       await expect(scores.nth(1)).toContainText(
         "1 guessed, 2 skipped",
       );
@@ -277,7 +277,7 @@ test.describe("Country Guesser Multiplayer", () => {
         "clipboard-read",
         "clipboard-write",
       ]);
-      await joinLobby(page, "Mark");
+      await joinLobby(page, "Marko");
       await page.getByRole("button", { name: "Copy Link" }).click();
       await expect(
         page.getByRole("button", { name: "Copied!" }),

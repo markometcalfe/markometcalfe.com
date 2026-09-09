@@ -3,7 +3,7 @@ import { LobbyRoom } from "./lobby-room";
 
 export { LobbyRoom };
 
-const PRODUCTION_ORIGIN = "https://markmetcalfe.com";
+const PRODUCTION_ORIGIN = "https://markometcalfe.com";
 
 // In production only the live site may call this API. Locally
 // (env.ENVIRONMENT=development, set via .dev.vars) any origin is

@@ -6,8 +6,8 @@
   "preview_urls": false,
   "routes": [
     {
-      "pattern": "markmetcalfe.com/api/doodle/*",
-      "zone_name": "markmetcalfe.com",
+      "pattern": "markometcalfe.com/api/doodle/*",
+      "zone_name": "markometcalfe.com",
     },
   ],
   "durable_objects": {

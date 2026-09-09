@@ -8,7 +8,7 @@
 <script setup lang="ts">
 definePageMeta({ ssr: false });
 
-useSeoMeta({ title: "Pulsar - Mark Metcalfe" });
+useSeoMeta({ title: "Pulsar - Marko Metcalfe" });
 
 usePulsarVisuals();
 </script>

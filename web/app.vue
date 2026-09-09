@@ -12,11 +12,11 @@
 const showDynamicBackground = useDynamicBackgroundVisible();
 
 useSeoMeta({
-  title: "Mark Metcalfe",
-  ogTitle: "Mark Metcalfe",
-  description: "Mark Metcalfe: Developer & Visual Artist",
-  ogDescription: "Mark Metcalfe: Developer & Visual Artist",
-  ogImage: "https://markmetcalfe.com/social-card.jpg?v=6",
+  title: "Marko Metcalfe",
+  ogTitle: "Marko Metcalfe",
+  description: "Marko Metcalfe: Developer & Visual Artist",
+  ogDescription: "Marko Metcalfe: Developer & Visual Artist",
+  ogImage: "https://markometcalfe.com/social-card.jpg?v=6",
 });
 
 onMounted(() => {

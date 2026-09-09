@@ -5,7 +5,7 @@
       <LinkButton
         text="PDF"
         title="Download as a PDF"
-        href="https://markmetcalfe.com/resume.pdf"
+        href="https://markometcalfe.com/resume.pdf"
         large
         external
       >
@@ -87,7 +87,7 @@
 </template>
 
 <script setup lang="ts">
-import resumeData, { type Resume } from "@markmetcalfe/resume";
+import resumeData, { type Resume } from "@markometcalfe/resume";
 
 const resume = resumeData as unknown as Resume;
 </script>

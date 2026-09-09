@@ -6,10 +6,10 @@
           <ProfilePhoto />
         </div>
         <div class="home-header-right">
-          <h1>Mark Metcalfe</h1>
+          <h1>Marko Metcalfe</h1>
           <div class="home-header-links">
             <a
-              href="https://github.com/markmetcalfe"
+              href="https://github.com/markometcalfe"
               title="GitHub"
               target="_blank"
               rel="noopener noreferer"
@@ -25,7 +25,7 @@
               <Icon name="bx:bxl-instagram" />
             </a>
             <a
-              href="https://www.linkedin.com/in/mark-metcalfe/"
+              href="https://www.linkedin.com/in/marko-metcalfe/"
               title="LinkedIn"
               target="_blank"
               rel="noopener noreferer"

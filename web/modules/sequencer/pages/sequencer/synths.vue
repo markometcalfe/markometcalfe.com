@@ -92,11 +92,11 @@ import type { Synth } from "@sequencer/util/tone/synths";
 import { notes } from "@sequencer/util/tone";
 
 useSeoMeta({
-  title: "Edit Synths - Mark Metcalfe",
-  ogTitle: "Edit Synths - Mark Metcalfe",
+  title: "Edit Synths - Marko Metcalfe",
+  ogTitle: "Edit Synths - Marko Metcalfe",
   description: "Interactive step sequencer in the browser",
   ogDescription: "Interactive step sequencer in the browser",
-  ogImage: "https://markmetcalfe.com/sequencer-social-card.jpg?v=1",
+  ogImage: "https://markometcalfe.com/sequencer-social-card.jpg?v=1",
 });
 
 const sequencerStore = useSequencerStore();

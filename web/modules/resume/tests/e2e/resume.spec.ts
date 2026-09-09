@@ -22,7 +22,9 @@ test.describe("ResumePage", () => {
 
     await Promise.all([page.waitForURL("/"), link.click()]);
 
-    await expect(page.locator("body")).toContainText("Mark Metcalfe");
+    await expect(page.locator("body")).toContainText(
+      "Marko Metcalfe",
+    );
   });
 
   test("download button has correct link", async ({ page }) => {
@@ -30,7 +32,7 @@ test.describe("ResumePage", () => {
 
     await expect(link).toHaveAttribute(
       "href",
-      "https://markmetcalfe.com/resume.pdf",
+      "https://markometcalfe.com/resume.pdf",
     );
     await expect(link).toHaveAttribute("title", "Download as a PDF");
   });

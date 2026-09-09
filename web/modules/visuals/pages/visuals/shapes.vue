@@ -71,11 +71,11 @@ import {
 import { getColorName } from "@visuals/util/color";
 
 useSeoMeta({
-  title: "Edit Shapes - Mark Metcalfe",
-  ogTitle: "Edit Shapes - Mark Metcalfe",
+  title: "Edit Shapes - Marko Metcalfe",
+  ogTitle: "Edit Shapes - Marko Metcalfe",
   description: "Interactive graphics generated live in the browser",
   ogDescription: "Interactive graphics generated live in the browser",
-  ogImage: "https://markmetcalfe.com/visuals-social-card.jpg?v=1",
+  ogImage: "https://markometcalfe.com/visuals-social-card.jpg?v=1",
 });
 
 const visualsStore = useVisualsStore();

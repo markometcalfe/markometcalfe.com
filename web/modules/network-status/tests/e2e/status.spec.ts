@@ -10,7 +10,9 @@ test.describe("NetworkStatusPage", () => {
     const link = page.locator('[aria-label="Back"]');
 
     await Promise.all([page.waitForURL("/"), link.click()]);
-    await expect(page.locator("body")).toContainText("Mark Metcalfe");
+    await expect(page.locator("body")).toContainText(
+      "Marko Metcalfe",
+    );
   });
 
   test("can see connected network status", async ({

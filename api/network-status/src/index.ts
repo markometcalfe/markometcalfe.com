@@ -6,7 +6,7 @@ export default {
     if (env.IS_PLAYWRIGHT === "1") {
       homeIp = "123.45.678.90";
     } else {
-      const homeDomain = "home.markmetcalfe.com";
+      const homeDomain = "home.markometcalfe.com";
       const dnsResponse = await fetch(
         `https://cloudflare-dns.com/dns-query?name=${homeDomain}`,
         {

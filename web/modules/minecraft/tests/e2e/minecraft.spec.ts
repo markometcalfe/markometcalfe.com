@@ -9,7 +9,7 @@ test.describe("MinecraftPage", () => {
   test("can load page", async ({ page }, testInfo) => {
     await expect(page.locator('text="Server IP:"')).toBeVisible();
     await expect(
-      page.locator('text="minecraft.markmetcalfe.com"'),
+      page.locator('text="minecraft.markometcalfe.com"'),
     ).toBeVisible();
     await takeSnapshot(page, "Minecraft Page", testInfo);
   });

@@ -1,5 +1,5 @@
 {
-  "name": "markmetcalfe.com",
+  "name": "markometcalfe.com",
   "private": true,
   "type": "module",
   "workspaces": ["web", "api"],

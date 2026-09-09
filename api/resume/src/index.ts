@@ -7,10 +7,11 @@ export default {
         headers: {
           "Content-Type": "application/octet-stream",
           "Content-Disposition":
-            'attachment; filename="Mark Metcalfe Resume.pdf"',
+            'attachment; filename="Marko Metcalfe Resume.pdf"',
           "Cache-Control":
             "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
-          "X-Message-From-Mark": "Thanks for checking out my resume!",
+          "X-Message-From-Marko":
+            "Thanks for checking out my resume!",
         },
       });
     } catch (error) {
@@ -27,12 +28,12 @@ async function fetchResumeAsset(
   env: Env,
 ): Promise<Response> {
   const resumeResponse = await fetch(
-    "https://api.github.com/repos/markmetcalfe/resume/releases/latest",
+    "https://api.github.com/repos/markometcalfe/resume/releases/latest",
     {
       headers: {
         Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
         Accept: "application/vnd.github.v3+json",
-        "User-Agent": "markmetcalfe.com-api",
+        "User-Agent": "markometcalfe.com-api",
       },
     },
   );
@@ -57,7 +58,7 @@ async function fetchResumeAsset(
     headers: {
       Authorization: `Bearer ${env.GITHUB_API_TOKEN}`,
       Accept: "application/octet-stream",
-      "User-Agent": "markmetcalfe.com-api",
+      "User-Agent": "markometcalfe.com-api",
     },
   });
 
@@ -70,6 +71,6 @@ async function fetchResumeAsset(
 
 function throwError(debugData: string): never {
   throw new Error(
-    `Failed to download resume.\nPlease contact me directly at mark@markmetcalfe.com for a copy.\n\nError debug data: ${debugData}`,
+    `Failed to download resume.\nPlease contact me directly at marko@markometcalfe.com for a copy.\n\nError debug data: ${debugData}`,
   );
 }

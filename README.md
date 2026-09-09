@@ -1,13 +1,13 @@
-# [markmetcalfe.com](https://markmetcalfe.com)
+# [markometcalfe.com](https://markometcalfe.com)
 
-The source code for my personal portfolio site at [markmetcalfe.com](https://markmetcalfe.com).
+The source code for my personal portfolio site at [markometcalfe.com](https://markometcalfe.com).
 
 ## What it contains
 
 The site is a portfolio and creative playground, including:
 
 - **Home page** — landing page with an interactive 3D visuals background
-- **Resume** — dynamically fetched from the `@markmetcalfe/resume` package
+- **Resume** — dynamically fetched from the `@markometcalfe/resume` package
 - **Visuals** — interactive generative graphics using Three.js
 - **Doodle** — a multiplayer drawing and guessing game
 - **Country Guesser** — a singleplayer and multiplayer country name guessing game

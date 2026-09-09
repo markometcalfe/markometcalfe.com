@@ -21,7 +21,7 @@ test.describe("ErrorPage", () => {
     const link = page.locator('a:has-text("Contact Me")');
     await expect(link).toHaveAttribute(
       "href",
-      "mailto:mark@markmetcalfe.com",
+      "mailto:marko@markometcalfe.com",
     );
   });
 });

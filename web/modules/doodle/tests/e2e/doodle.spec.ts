@@ -24,7 +24,7 @@ testPerProject(
       "clipboard-read",
       "clipboard-write",
     ]);
-    await joinLobby(page, "Mark");
+    await joinLobby(page, "Marko");
 
     await page
       .locator(".gamepickerbutton", { hasText: "Doodle" })
@@ -125,7 +125,7 @@ testPerProject(
       guestPage.locator(".doodleroom-header-round"),
     ).toHaveText("Round 1/2");
 
-    // Mark (host) is drawOrder[0] -- seed() pre-registers the lobby host
+    // Marko (host) is drawOrder[0] -- seed() pre-registers the lobby host
     // as the room's first player before anyone's WebSocket connects (see
     // game-room.ts) -- so round 1 is always his to draw. The word and
     // timer are shown above the canvas, not in the header (see
@@ -141,7 +141,7 @@ testPerProject(
       /^30\s*$/,
     );
 
-    // Player list: Mark first (join order), host crown + drawing pencil
+    // Player list: Marko first (join order), host crown + drawing pencil
     // icons; Steve second, neither icon.
     const hostPlayers = page.locator(".doodleplayers-item");
     await expect(hostPlayers).toHaveCount(2);
@@ -150,7 +150,7 @@ testPerProject(
     );
     await expect(
       hostPlayers.nth(0).locator(".doodleplayers-item-name"),
-    ).toContainText("Mark");
+    ).toContainText("Marko");
     await expect(
       hostPlayers.nth(0).locator(".doodleplayers-item-icon"),
     ).toHaveCount(2);
@@ -172,17 +172,17 @@ testPerProject(
 
     // Chat history: joins, then the round-start announcement. "Your
     // word" is only ever sent to the drawer's own session (see
-    // sendFullState/doStartRound in game-room.ts), so only Mark's chat
+    // sendFullState/doStartRound in game-room.ts), so only Marko's chat
     // shows it.
     const hostChat = page.locator(".doodlechat-messages");
-    await expect(hostChat).toContainText("Mark joined");
+    await expect(hostChat).toContainText("Marko joined");
     await expect(hostChat).toContainText("Steve joined");
-    await expect(hostChat).toContainText("Mark is drawing!");
+    await expect(hostChat).toContainText("Marko is drawing!");
     await expect(hostChat).toContainText('Your word: "elephant"');
 
     const guestChat = guestPage.locator(".doodlechat-messages");
     await expect(guestChat).toContainText("Steve joined");
-    await expect(guestChat).toContainText("Mark is drawing!");
+    await expect(guestChat).toContainText("Marko is drawing!");
 
     // Plain chat (not a guess) from the drawer reaches both tabs.
     const hostChatInput = page.getByRole("searchbox", {
@@ -192,10 +192,10 @@ testPerProject(
     await hostChatInput.press("Enter");
     await expect(
       hostChat.locator(".doodlechat-msg-chat", { hasText: "hello" }),
-    ).toContainText("Mark");
+    ).toContainText("Marko");
     await expect(
       guestChat.locator(".doodlechat-msg-chat", { hasText: "hello" }),
-    ).toContainText("Mark");
+    ).toContainText("Marko");
 
     // Offensive chat text isn't rejected with an error like a name or
     // suggested word -- it's silently swapped server-side for a "happy"
@@ -208,7 +208,7 @@ testPerProject(
     // (see the IS_PLAYWRIGHT check in game-room.ts) instead of a random
     // one, so this assertion -- and the Chromatic snapshot at the bottom
     // of this test that captures the chat panel -- are deterministic.
-    const HAPPY_WORD = /^Mark:\s*rainbows\s*$/;
+    const HAPPY_WORD = /^Marko:\s*rainbows\s*$/;
     const hostChatMessages = hostChat.locator(".doodlechat-msg-chat");
     await hostChatInput.fill("fuck");
     await hostChatInput.press("Enter");
@@ -226,7 +226,7 @@ testPerProject(
       guestPage.locator(".doodlecanvas-toolbar"),
     ).toHaveCount(0);
 
-    // Mark picks gray (#6b7280) at brush size 16 and draws a stroke --
+    // Marko picks gray (#6b7280) at brush size 16 and draws a stroke --
     // the color/size buttons have no text content, so their accessible
     // name is their `title` attribute (the hex code / "Size N").
     await clickRobustly(
@@ -285,7 +285,7 @@ testPerProject(
     // Steve's correct guess: he's the only non-drawer, so this ends the
     // round immediately (no waiting on the real round-length timer).
     // Points are `max(50, floor(timeLeft * 2))` against a 30s round
-    // (game-room.ts), so bounded but not exactly predictable; Mark's
+    // (game-room.ts), so bounded but not exactly predictable; Marko's
     // drawer bonus is a flat, exact +25.
     await guestGuessInput.fill("elephant");
     await guestGuessInput.press("Enter");
@@ -342,7 +342,7 @@ testPerProject(
       guestPage.locator(".doodlecanvas-toolbar"),
     ).toBeVisible();
 
-    // Mark is now the only guesser -- his correct guess both ends the
+    // Marko is now the only guesser -- his correct guess both ends the
     // round and, since round 2 is the last round, ends the game once
     // the post-round transition elapses.
     await hostChatInput.fill("egg");
@@ -383,7 +383,10 @@ testPerProject(
         ),
       })),
     );
-    expect(scores.map(s => s.name).sort()).toEqual(["Mark", "Steve"]);
+    expect(scores.map(s => s.name).sort()).toEqual([
+      "Marko",
+      "Steve",
+    ]);
     for (const { points } of scores) {
       expect(points).toBeGreaterThanOrEqual(75);
       expect(points).toBeLessThanOrEqual(85);

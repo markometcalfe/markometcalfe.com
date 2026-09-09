@@ -19,7 +19,9 @@ test.describe("VisualsPage", () => {
 
     await Promise.all([page.waitForURL("/"), link.click()]);
 
-    await expect(page.locator("body")).toContainText("Mark Metcalfe");
+    await expect(page.locator("body")).toContainText(
+      "Marko Metcalfe",
+    );
   });
 
   test("can navigate to the edit shapes page", async ({ page }) => {

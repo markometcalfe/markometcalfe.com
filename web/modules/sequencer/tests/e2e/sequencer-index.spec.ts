@@ -22,6 +22,8 @@ test.describe("SequencerPage", () => {
 
     await Promise.all([page.waitForURL("/"), link.click()]);
 
-    await expect(page.locator("body")).toContainText("Mark Metcalfe");
+    await expect(page.locator("body")).toContainText(
+      "Marko Metcalfe",
+    );
   });
 });
