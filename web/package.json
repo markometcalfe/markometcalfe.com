@@ -22,7 +22,7 @@
     "color-convert": "^3.0.1",
     "hex-color-to-color-name": "^2.0.0",
     "is-mobile": "^5.0.0",
-    "maplibre-gl": "^5.24.0",
+    "maplibre-gl": "^6.0.0",
     "nuxt": "4.5.2",
     "obscenity": "^0.4.6",
     "pinia": "^4.0.0",
